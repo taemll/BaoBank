@@ -1,0 +1,734 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Shop" Height="700" Width="1100">
+    <Window.Resources>
+        <Style x:Key="TabItemStyle" TargetType="TabItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource SecundaryTextColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="0 0 0 0"/>
+            <Setter Property="Width" Value="130"/>
+            <Setter Property="Padding" Value="15 15"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Century Gothic" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Century Gothic" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="18"/>
+
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="Shop">
+        <Grid x:Name="MainW" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FF2E4554">
+                <StackPanel Orientation="Horizontal" Margin="20 5" HorizontalAlignment="Center" >
+                    <Button MinWidth="150" Height="50" Padding="10" FontWeight="Bold" Background="{x:Null}" Foreground="#FFCFCFCF" Content="Телефоны, гаджеты" BorderThickness="0" BorderBrush="#FF2C3B45" Click="bt_phones"/>
+                    <Button MinWidth="150" Height="50" Padding="10" FontWeight="Bold" Background="{x:Null}" Foreground="#FFCFCFCF" Content="Бытовая техника" BorderThickness="1,0" BorderBrush="#FF2C3B45" Click="bt_tech"/>
+                    <Button MinWidth="150" Height="50" Padding="10" FontWeight="Bold" Background="{x:Null}" Foreground="#FFCFCFCF" Content="Одежда" BorderThickness="0" BorderBrush="#FF2C3B45" Click="bt_clothes"/>
+                    <Button MinWidth="150" Height="50" Padding="10" FontWeight="Bold" Background="{x:Null}" Foreground="#FFCFCFCF" Content="Обувь" BorderThickness="1,0" BorderBrush="#FF2C3B45" Click="bt_shoes"/>
+                    <Button MinWidth="150" Height="50" Padding="10" FontWeight="Bold" Background="{x:Null}" Foreground="#FFCFCFCF" Content="Спорт и туризм" BorderThickness="0" BorderBrush="#FF2C3B45" Click="bt_sport"/>
+                </StackPanel>
+                <Button x:Name="cmbck1" Visibility="Hidden" Click="bt_cmbck1" Width="50" HorizontalAlignment="Left" BorderThickness="0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/left.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" x:Name="gr_menu" Background="White">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox Text="поищей" Margin="0 10 0 0" Padding="10 0" MinWidth="650" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Background="{x:Null}" SelectionBrush="{x:Null}" BorderThickness="2" Foreground="#FF919191"/>
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Content="Вас могут заинтеpeсовать" FontSize="30" HorizontalAlignment="Center" Foreground="#FF2E4554" FontWeight="Bold"/>
+                    <ScrollViewer Foreground="#FF2E4554" Grid.Row="2" Margin="0,0,0,60">
+                        <StackPanel x:Name="stackP2" Margin="70 0" >
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20 0">
+                                <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock x:Name="name" TextWrapping="WrapWithOverflow" Padding="10 0" Text="Тест" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="574000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Grid MaxWidth="250" MaxHeight="370"  Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Padding="10 0" Text="здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Padding="10 0" Text="здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20 0">
+                                <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Padding="10 0" Text="здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Padding="10 0" Text="здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                    <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="140"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="/aknvd0ok6ls.jpg" Margin="10" Stretch="UniformToFill"/>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock TextWrapping="WrapWithOverflow" Padding="10 0" Text="здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                                <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                                <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                            </StackPanel>
+
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </ScrollViewer>
+                </Grid>
+                <!--Кнопка для админа-->
+                <Button Click="Admin_Click" Padding="20" Width="60" VerticalAlignment="Bottom"  Grid.Row="1" Margin="20" Height="60" HorizontalAlignment="Right" Content="Button" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="100"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/plus.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <!--Конец кнопки-->
+            </Grid>
+
+
+
+            <Grid x:Name="smartphones" Visibility="Hidden" Background="White" Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="Без названия.jpg" Margin="10" Stretch="Uniform"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock x:Name="smartphones_name" TextWrapping="WrapWithOverflow" Padding="10 0" Text="Apple iPhone 13 256GB Midnight" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="574000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="sam 22.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock x:Name="smartphones_name2" TextWrapping="WrapWithOverflow" Padding="10 0" Text="Samsung Galaxy A22 64GB Black" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="85550" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="11.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Apple iPhone 11 128GB White" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="379000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid x:Name="tech" Visibility="Hidden" Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="бытовая 1.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Холодильник Samsung RB-33A32N0SA" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="274000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="бытовая 2.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Морозильная камера ларь Pozis FH-250-1" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="374000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="бытовая 3.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Посудомоечная машина Hotpoint-Ariston HFO-3C23 WF X" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="225000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="img/Снимок экрана 2021-12-30 122115.png" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Здесь могла быть ваша реклама" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="скокастоит" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid x:Name="clothes" Visibility="Hidden" Background="White" Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="одежда 1.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Пуловер LOMBIA" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="36000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="одежда 2.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Тайтсы TS LUX HR TIGHT" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="54000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="одежда 3.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Куртка утепленная" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="33000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid x:Name="shoes" Visibility="Hidden" Background="White" Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="ботинки 11.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Ботинки IMAC" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="68000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="ботинки 2.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Ботинки PIKOLINOS" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="75000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="ботинки 3.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Ботинки Panama Jack 229" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="55000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid x:Name="sport" Visibility="Hidden" Background="White" Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="туризм 1.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="Сноуборд женский Ride Compact - 2020" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="782220" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="туризм 2.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="палатки Рыбалка , Фермер" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="65000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid MaxWidth="250" MaxHeight="370" Margin="20">
+                                <Border BorderBrush="#FF2E4554" BorderThickness="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition Height="140"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="туризм 3.jpg" Margin="10" Stretch="UniformToFill"/>
+                                        <StackPanel Grid.Row="1">
+                                            <TextBlock  TextWrapping="WrapWithOverflow" Padding="10 0" Text="ЛЫЖИ ГОРНЫЕ SALOMON QST MAX JR S + C5 GW J75 BLACK-WHITE" Height="70" FontSize="20"/>
+                                            <TextBlock Padding="10 0" Text="156000" Height="35" FontSize="20" Foreground="#FF2E4554" FontWeight="Bold"/>
+                                            <Button Content="Подробнее..." Click="more" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E4554"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+
+        </Grid>
+
+        <Grid x:Name="product" Background="White" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="cmbck" Click="bt_cmbck" Width="50" HorizontalAlignment="Left" BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="img/left1.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+            <Grid Margin="0 0 0 40" Grid.Row="1">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.RowSpan="2">
+                            <Border BorderBrush="#FF2E4554" BorderThickness="2" Margin="20">
+                                <Image x:Name="product_img" Source="img/Снимок экрана 2021-12-30 122115.png" Stretch="UniformToFill"/>
+                            </Border>
+                        </Grid>
+                        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="product_name" FontSize="34" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="Название" TextAlignment="Center" Foreground="#FF2E4554"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="10" >
+                            <TextBlock x:Name="product_price" FontSize="40" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="Цена" TextAlignment="Center" Foreground="#FF2E4554"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                                <Button x:Name="bt_buy" FontWeight="Bold" Content="Купить" Click="buy" Margin="20 0" FontSize="34" Padding="10" Width="250" Background="{x:Null}" Foreground="#FF2E4554" BorderBrush="#FF2E4554" BorderThickness="2">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="45"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                                <Button x:Name="bt_bskt" FontWeight="Bold" Content="В корзину" Click="bascket" Margin="20 0" FontSize="34" Padding="10" Width="250" Background="{x:Null}" Foreground="#FF2E4554" BorderBrush="#FF2E4554" BorderThickness="2">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="45"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="20">
+                            <TextBlock x:Name="product_description" Text="Описание:" FontSize="30" TextWrapping="WrapWithOverflow" TextAlignment="Left" Margin="20 0" Foreground="#FF2E4554"/>
+                            <TextBlock  FontSize="30" TextWrapping="WrapWithOverflow" TextAlignment="Left" Margin="20" Foreground="#FF2E4554"/>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <!-- ШАБЛОН ДЛЯ ДОБАВЛЕНИЯ-->
+        <Grid x:Name="add_product"  Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ccmmbb" HorizontalAlignment="Left" Click="bt_ccmmbb" VerticalAlignment="Top" Height="50" Width="50" Cursor="Hand" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/img/left1.png" Stretch="Uniform"/>
+                </Button.Background>
+
+            </Button>
+            <Grid Margin="0 0 0 40" Grid.Row="1">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.RowSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Border BorderBrush="#FF2E4554" BorderThickness="2" Margin="20">
+                                <Image x:Name="add_product_img" Source="img/Снимок экрана 2021-12-30 122115.png" Stretch="UniformToFill" />
+                            </Border>
+                            <Button Grid.Row="1" Content="Загрузить фото" Click="product_change_img" Height="30" Width="150" Foreground="#FF556771" FontSize="17" BorderBrush="#FF2E4554" Background="{x:Null}" FontWeight="Bold">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="15" />
+                                    </Style>
+                                </Button.Resources>
+
+                            </Button>
+
+                        </Grid>
+                        <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Margin="20">
+                            <Label Content="Название категории"  FontSize="17"/>
+                            <TextBox x:Name="add_product_category" FontSize="34" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="" TextAlignment="Center" Foreground="#FF2E4554"/>
+                            <Label Content="Название товара"  FontSize="17"/>
+                            <TextBox x:Name="add_product_name" FontSize="34" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="" TextAlignment="Center" Foreground="#FF2E4554"/>
+                            <Label Content="Количество"  FontSize="17"/>
+                            <TextBox x:Name="add_product_count" FontSize="34" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="" TextAlignment="Center" Foreground="#FF2E4554"/>
+                            <Label Content="Цена"  FontSize="17"/>
+                            <TextBox x:Name="add_product_price" FontSize="40" TextWrapping="WrapWithOverflow" FontWeight="Bold" Text="" TextAlignment="Center" Foreground="#FF2E4554"/>
+                            <Button x:Name="add_product_save" FontWeight="Bold" Content="Добавить" Click="add_save" Margin="20 10" FontSize="30" Padding="10" Width="250" Background="{x:Null}" Foreground="#FF2E4554" BorderBrush="#FF2E4554" BorderThickness="2" Cursor="Hand">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="45"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="20">
+                            <TextBlock Text="Описание:" FontSize="30" TextWrapping="WrapWithOverflow" TextAlignment="Left" Margin="20 0" Foreground="#FF2E4554"/>
+                            <TextBox x:Name="add_product_description" Text="" FontSize="24" TextWrapping="WrapWithOverflow" TextAlignment="Left" Margin="20 0" Foreground="#FF2E4554"/>
+                        </StackPanel>
+
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <!--КОНЕЦ ШАБЛОНА-->
+
+
+
+
+    </Grid>
+</Window>
